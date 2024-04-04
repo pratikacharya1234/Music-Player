@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Roboto&family=Varela+Round&family=Varta&display=swap');*{
+  margin: 0;
+  padding: 0;
+}
+
+
+body{
+  background-color: rgb(44, 42, 42);
+}
+
+
+nav{
+  font-family: 'Lato', sans-serif;
+}
+
+
+nav ul{
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  height: 65px;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+nav ul  li{
+  padding: 0 12px ;
+  cursor: pointer;
+}
+
+nav ul  li input{
+  height: 2.5rem;
+  width: 15rem;
+  border:2px solid #0f9e0f;
+  border-radius: 10px;
+  margin: 10px 0  10px 45rem;
+}
+
+input[type="text"]{
+  color: #0f9e0f;
+  font-size: 20px;
+}
+
+nav ul li a{
+  text-decoration: none;
+  font-family: 30px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav ul li button{
+  font-size: 30px;
+  background: transparent;
+  color: #0f9e0f;
+  border: none;
+  cursor: pointer;
+  margin:10px  5px;
+}
+
+nav ul li button:hover{
+  border: 1px solid #0f9e0f;
+}
+
+.logo{
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+
+.logo img{
+  width: 45px;
+  padding: 0 8px;
+}
+
+
+.container {
+  min-height: 60vh;
+  color: white;
+  font-family: 'lato', sans-serif;
+  display: flex;
+  width: 94%;
+  margin: 23px 0 0 0;
+  border-radius: 12px;
+  padding: 34px;
+  /* background-image: url('3600.webp'); */
+  position: relative; 
+}
+
+
+
+
+
+.down{
+  position: sticky;
+  height: 90px;
+  background-color: black;
+  color: white;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.icon{
+  margin: 10px 0 0 0 ;
+
+}
+
+
+.icon i{
+  cursor: pointer;
+}
+#progressBar{
+  width: 80vw;
+  cursor: pointer;
+
+
+}.songContainer{
+  margin: 74px 0;
+}
+
+
+
+.songItem{
+  height: 50px;
+  display: flex;
+  background-color: white;
+  color: black;
+  margin: 12px 0;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 35px;
+}
+.songItem img{
+  width: 40px;
+  margin: 0 23px;
+  border-radius: 40px;
+  height: 40px;
+}
+
+
+.time{
+  margin: 0 23px;
+}
+
+
+.time i{
+  cursor: pointer;
+}
+
+
+
+.songData{
+  position: absolute;
+  left: 10vw;
+}
+
+
+.songData img{
+  width: 70px;
+  margin: 10px 0;
+  opacity: 0;
+  transition: opacity 1s ease-in;
+  
+}
+
+
+
+.results {
+  background-color: #000000;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 20rem;
+  overflow-y: auto; /* Add scroll if content exceeds height */
+}
+
+.resultCard {
+  padding: 15px;
+  margin: 10px;
+  background-color: #333333;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.resultTitle {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: white;
+  text-align: center;
+}
+
+.resultImage {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.resultImage:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+
+#searchInput {
+  margin: 10px 0 10px 45rem; 
+  height: 2.5rem;
+  width: 15rem;
+  border: 2px solid #0f9e0f;
+  border-radius: 10px;
+}
+
+input[type="text"] {
+  color: #0f9e0f;
+  font-size: 20px;
+}

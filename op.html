@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        #searchQuery {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        #searchButton, #backButton {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        #results {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Music Search and Play</h1>
+        <input type="text" id="searchQuery" placeholder="Search for music...">
+        <button id="searchButton">Search</button>
+        <button id="backButton">Back to Home</button>
+        <div id="results"></div>
+    </div>
+    <script>
+        document.getElementById('searchButton').addEventListener('click', async () => {
+            const searchQuery = document.getElementById('searchQuery').value;
+            const url = `https://youtube-music-api3.p.rapidapi.com/matching?id=LnbvtRIw-Es&query=${encodeURIComponent(searchQuery)}`;
+            const options = {
+                method: 'GET',
+                headers: {
+                    'X-RapidAPI-Key': 'fe48b565c4msh5c5c640de2f6665p1d6f66jsn0a87bad867e4',
+                    'X-RapidAPI-Host': 'youtube-music-api3.p.rapidapi.com'
+                }
+            };
+
+            try {
+                const response = await fetch(url, options);
+                const result = await response.json();
+                displayResults(result);
+            } catch (error) {
+                console.error(error);
+            }
+        });
+
+        document.getElementById('backButton').addEventListener('click', () => {
+            window.location.href = 'index.html';
+        });
+
+        function displayResults(results) {
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = '';
+
+            results.forEach(result => {
+                const resultDiv = document.createElement('div');
+                resultDiv.innerHTML = `
+                    <h3>${result.title}</h3>
+                    <p>${result.artist}</p>
+                    <audio controls>
+                        <source src="${result.previewUrl}" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                `;
+                resultsDiv.appendChild(resultDiv);
+            });
+        }
+    </script>
+</body>
+</html>
